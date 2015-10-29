@@ -27,9 +27,9 @@ type templateHandler interface {
 // that maximize the speed
 func New(filename string, data map[string]interface{}, development bool) templateHandler {
 	if data == nil {
-		data = make(map[string]interface{})		
+		data = make(map[string]interface{})
 	}
-	data["IsDevelopment"] = devlopment
+	data["IsDevelopment"] = development
 	if development {
 		return newDynamicTemplateHandler(filename, data)
 	} else {
